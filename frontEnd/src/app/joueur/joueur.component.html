@@ -1,0 +1,37 @@
+<p>joueur works!</p>
+
+<div *ngFor="let joueur of joueurs">
+    <h3>{{ joueur.name }}</h3>
+    <h3>{{ joueur.prenom }}</h3>
+    <h3>{{ joueur.email }}</h3>
+    <h3>{{ joueur.age }}</h3>
+    <br />
+</div>
+
+
+<p>ajouter un joueur</p>
+
+<!--
+<form (ngSubmit)="ajouterJoueur()">
+    <label>Nom:</label>
+    <input type="text" [(ngModel)]="nom" name="nom" required>
+  
+    <label>Âge:</label>
+    <input type="number" [(ngModel)]="age" name="age" required>
+  
+    <button type="submit">Ajouter Joueur</button>
+</form>
+-->
+
+<form #usersForm="ngForm" (ngSubmit)="ajouterJoueur(usersForm.value)">
+    <input type="text" ngModel name="name" placeholder="Entre votre nom">
+    <br>
+    <input type="text" ngModel name="prenom" placeholder="Entre votre prenom">
+    <br>
+    <input type="text" ngModel name="sexe" placeholder="Sexe">
+    <br>
+    <input type="text" ngModel name="email" placeholder="Entre votre email">
+    <br>
+    <button>Add New User</button>
+
+</form>
